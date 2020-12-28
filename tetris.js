@@ -206,7 +206,7 @@ function loop() {
         if (keys[i] == controls["move_left"][0] || keys[i] == controls["move_right"][0]) {
             if (keys[i] == prio) {
                 if ((((new Date().getTime() - keyDict[keys[i]][0]) >= controls.DAS) && (new Date().getTime() - keyDict[keys[i]][1]) >= controls.ARR) || keyDict[keys[i]][1] == 0) {
-                    if (controls.ARR == 0) {
+                    if (controls.ARR == 0 && !keyDict[keys[i]][1] == 0) {
                         for (var mov = 0; mov < matrixWidth; mov++) {
                             move(keys[i])
                         }
